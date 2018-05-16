@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="245dp"
         android:orientation="vertical"
         android:background="@color/colorPrimaryLight">
 
@@ -38,7 +38,7 @@
             android:paddingBottom="4dp"
             android:textColor="@color/black"
             android:ellipsize="end"
-            android:maxLines="4" />
+            android:maxLines="2" />
 
         <TextView
             android:id="@+id/article_subtitle"
