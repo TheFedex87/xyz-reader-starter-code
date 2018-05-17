@@ -9,4 +9,7 @@
 
     <string name="up">Up</string>
 
+    <string name="show_all">...Show All</string>
+    <string name="show_less">Show less</string>
+
 </resources>

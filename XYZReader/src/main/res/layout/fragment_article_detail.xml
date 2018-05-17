@@ -18,7 +18,7 @@
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
             app:title="@string/app_name">
 
             <FrameLayout
@@ -55,9 +55,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.example.xyzreader.ui.MaxWidthLinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:background="#fff"
                 android:elevation="2dp"
@@ -67,7 +67,7 @@
                 <LinearLayout
                     android:id="@+id/meta_bar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
                     android:background="#333"
@@ -97,20 +97,36 @@
                         android:textColor="#8fff" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/article_body"
-                    style="?android:attr/textAppearanceMedium"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                    android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                    android:paddingBottom="@dimen/detail_body_bottom_margin"
-                    android:textColor="@color/black"
-                    android:textColorLink="@color/colorAccent"
-                    android:textSize="@dimen/detail_body_text_size" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/article_body"
+                        style="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
+                        android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                        android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+                        android:textColor="@color/black"
+                        android:textColorLink="@color/colorAccent"
+                        android:textSize="@dimen/detail_body_text_size"
+                        android:maxLength="@integer/collapsed_review_max_lenght" />
 
-            </com.example.xyzreader.ui.MaxWidthLinearLayout>
+                    <TextView
+                        android:id="@+id/show_all"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
+                        android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                        android:textColor="@color/colorAccent"
+                        android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+                        android:textSize="@dimen/detail_body_text_size"
+                        android:text="@string/show_all"/>
+                </LinearLayout>
+
+            </LinearLayout>
         </FrameLayout>
     </android.support.v4.widget.NestedScrollView>
 
