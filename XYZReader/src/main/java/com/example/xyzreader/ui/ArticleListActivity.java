@@ -68,11 +68,6 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         setExitTransition();
 
-        //mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
-
-        //final View toolbarContainerView = findViewById(R.id.toolbar_container);
-
         appBar = findViewById(R.id.app_bar_layout);
 
         ViewCompat.setElevation(appBar, getResources().getDimension(R.dimen.app_bar_elevation));
@@ -122,8 +117,6 @@ public class ArticleListActivity extends AppCompatActivity implements
             }
         }
     };
-
-
 
     private void updateRefreshingUI() {
         mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
@@ -214,10 +207,6 @@ public class ArticleListActivity extends AppCompatActivity implements
             }
 
             Picasso.get().load(mCursor.getString(ArticleLoader.Query.THUMB_URL)).fit().centerCrop().into(holder.thumbnailView);
-//            holder.thumbnailView.setImageUrl(
-//                    mCursor.getString(ArticleLoader.Query.THUMB_URL),
-//                    ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
-//            holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         }
 
         @Override
