@@ -11,7 +11,7 @@
     android:focusable="true"
     android:foreground="?selectableItemBackground"
     app:cardElevation="0dp"
-    android:stateListAnimator="@anim/fab_state_list_anim"
+    android:stateListAnimator="@animator/card_anim"
     android:clipChildren="false">
 
     <LinearLayout

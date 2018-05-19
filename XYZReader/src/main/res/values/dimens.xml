@@ -1,7 +1,8 @@
 <resources>
     <dimen name="app_bar_elevation">8dp</dimen>
     <dimen name="main_list_margin_top">4dp</dimen>
-    <dimen name="main_toolbar_height">112dp</dimen>
+    <dimen name="main_toolbar_height">56dp</dimen>
+    <dimen name="tool_bar_content_inset">72dp</dimen>
     <dimen name="card_margin">3dp</dimen>
 
     <!-- detail -->

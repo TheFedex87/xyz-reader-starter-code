@@ -218,7 +218,7 @@ public class ArticleDetailFragment extends Fragment implements
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appCompatActivity.onSupportNavigateUp();
+                appCompatActivity.onBackPressed();
             }
         });
 

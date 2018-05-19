@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -21,8 +20,6 @@ import android.text.Html;
 import android.text.format.DateUtils;
 import android.transition.Explode;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -66,7 +63,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-        setExitTransition();
+        setReenterTransition();
 
         appBar = findViewById(R.id.app_bar_layout);
 
@@ -82,7 +79,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         }
     }
 
-    private void setExitTransition(){
+    private void setReenterTransition(){
         Explode explode = new Explode();
         explode.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.fast_out_linear_in));
         explode.setDuration(350);
