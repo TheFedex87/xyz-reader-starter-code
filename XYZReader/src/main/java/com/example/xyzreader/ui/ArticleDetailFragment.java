@@ -35,6 +35,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
@@ -207,6 +208,7 @@ public class ArticleDetailFragment extends Fragment implements
 
         TextView titleView = (TextView) mRootView.findViewById(R.id.article_title);
         TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
+        final LinearLayout metaBar = mRootView.findViewById(R.id.meta_bar);
         bylineView.setMovementMethod(new LinkMovementMethod());
         final TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
         final TextView showAll = mRootView.findViewById(R.id.show_all);
@@ -274,6 +276,7 @@ public class ArticleDetailFragment extends Fragment implements
                     Bitmap bitmap = ((BitmapDrawable)mPhotoView.getDrawable()).getBitmap();
                     Palette p = Palette.generate(bitmap, 12);
                     mMutedColor = p.getDarkMutedColor(0xFF333333);
+                    metaBar.setBackgroundColor(mMutedColor);
                     ActivityCompat.startPostponedEnterTransition(appCompatActivity);
                     mPhotoView.setTransitionName(null);
                 }
