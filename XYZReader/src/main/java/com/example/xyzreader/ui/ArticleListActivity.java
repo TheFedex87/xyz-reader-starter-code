@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -21,8 +20,6 @@ import android.text.Html;
 import android.text.format.DateUtils;
 import android.transition.Explode;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -143,7 +140,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         mRecyclerView.setAdapter(null);
     }
 
-    private class Adapter extends RecyclerView.Adapter<ViewHolder> {
+    private class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         private Cursor mCursor;
 
         public Adapter(Cursor cursor) {
@@ -213,18 +210,20 @@ public class ArticleListActivity extends AppCompatActivity implements
         public int getItemCount() {
             return mCursor.getCount();
         }
-    }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView thumbnailView;
-        public TextView titleView;
-        public TextView subtitleView;
+        class ViewHolder extends RecyclerView.ViewHolder {
+            public ImageView thumbnailView;
+            public TextView titleView;
+            public TextView subtitleView;
 
-        public ViewHolder(View view) {
-            super(view);
-            thumbnailView = view.findViewById(R.id.thumbnail);
-            titleView = view.findViewById(R.id.article_title);
-            subtitleView = view.findViewById(R.id.article_subtitle);
+            public ViewHolder(View view) {
+                super(view);
+                thumbnailView = view.findViewById(R.id.thumbnail);
+                titleView = view.findViewById(R.id.article_title);
+                subtitleView = view.findViewById(R.id.article_subtitle);
+            }
         }
     }
+
+
 }
