@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/card_height"
     android:layout_marginLeft="@dimen/card_margin"
     android:layout_marginRight="@dimen/card_margin"
     android:layout_marginTop="@dimen/card_margin"
@@ -11,12 +11,11 @@
     android:focusable="true"
     android:foreground="?selectableItemBackground"
     app:cardElevation="0dp"
-    android:stateListAnimator="@anim/fab_state_list_anim"
-    android:clipChildren="false">
+    android:stateListAnimator="@animator/card_anim">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="245dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/colorPrimaryLight">
 
@@ -24,7 +23,7 @@
         <ImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="@dimen/card_image_height"
             android:background="@color/photo_placeholder"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"/>
@@ -34,10 +33,10 @@
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="4dp"
+            android:paddingLeft="@dimen/card_title_margin_left"
+            android:paddingTop="@dimen/card_title_margin_top"
+            android:paddingRight="@dimen/card_title_margin_right"
+            android:paddingBottom="@dimen/card_title_margin_bottom"
             android:textColor="@color/black"
             android:ellipsize="end"
             android:maxLines="2" />
@@ -47,9 +46,10 @@
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"
+            android:paddingLeft="@dimen/card_extra_margin_left"
+            android:paddingTop="@dimen/card_extra_margin_top"
+            android:paddingRight="@dimen/card_extra_margin_right"
+            android:paddingBottom="@dimen/card_extra_margin_bottom"
             android:textColor="@color/grayTextColor"
             tools:text="Text to test"
             android:maxLines="2"

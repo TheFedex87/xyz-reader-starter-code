@@ -63,7 +63,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-        setExitTransition();
+        setReenterTransition();
 
         appBar = findViewById(R.id.app_bar_layout);
 
@@ -79,7 +79,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         }
     }
 
-    private void setExitTransition(){
+    private void setReenterTransition(){
         Explode explode = new Explode();
         explode.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.fast_out_linear_in));
         explode.setDuration(350);
