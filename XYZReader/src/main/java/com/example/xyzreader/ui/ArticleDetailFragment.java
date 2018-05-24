@@ -267,7 +267,8 @@ public class ArticleDetailFragment extends Fragment implements
                 @Override
                 public void onSuccess() {
                     Bitmap bitmap = ((BitmapDrawable)mPhotoView.getDrawable()).getBitmap();
-                    Palette p = Palette.generate(bitmap, 12);
+                    //Palette p = Palette.generate(bitmap, 12);
+                    Palette p = new Palette.Builder(bitmap).generate();
                     mMutedColor = p.getDarkMutedColor(0xFF333333);
                     metaBar.setBackgroundColor(mMutedColor);
                     ActivityCompat.startPostponedEnterTransition(appCompatActivity);
